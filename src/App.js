@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import apod from "./Components/apod";
+import PhotoData from "./components/apod.js";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
         Read through the instructions in the README.md file to build your NASA
         app! Have fun 🚀!
       </p>
+      < PhotoData/>
     </div>
   );
 }

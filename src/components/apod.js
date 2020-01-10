@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, Row } from "reactstrap";
 // import Display from "./Display";
 
 export default function PhotoData() {
@@ -13,10 +12,20 @@ export default function PhotoData() {
       )
       .then(response => {
         console.log(response);
-        setPhoto(response.url);
+        setPhoto(response.data);
       })
       .catch(error => {
         console.log("The data was not returned");
       });
   };
+  useEffect(() => {
+    getPics();
+  }, []);
+  return (
+    <div className="PhotoContainer">
+      <div className="Photo">
+        <img src={photo.hdurl} width={'75%'}/>
+      </div>
+    </div>
+  );
 }
